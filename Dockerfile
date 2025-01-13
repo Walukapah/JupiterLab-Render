@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Update and install required packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && pip3 install jupyterlab && apt-get install -y \
     python3 \
     python3-pip
 
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Install JupyterLab
-RUN pip3 install jupyterlab
+
 
 # Expose port 8080
 EXPOSE 8080
