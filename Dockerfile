@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Update and install required packages
-RUN apt-get update && pip3 install jupyterlab && apt-get install -y \
+RUN apt-get update && apt-get install python3 -y && apt-get install python3-pip -y && pip3 install jupyterlab
     python3 \
     python3-pip
 
