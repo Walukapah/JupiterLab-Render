@@ -10,9 +10,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Install JupyterLab
-RUN pip install jupyterlab \
-    pip3 install jupyterlab \
-    conda install -c conda-forge jupyterlab
+RUN install jupyterlab
 
 
 
