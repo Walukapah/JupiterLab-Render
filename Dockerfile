@@ -2,13 +2,19 @@
 FROM ubuntu:latest
 
 # Update and install required packages
-# RUN apt-get update && apt-get install python3 -y && apt-get install python3-pip -y && pip3 install jupyterlab
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip
 
 # Set the working directory
 WORKDIR /app
 
 # Install JupyterLab
-RUN pip3 install jupyterlab
+RUN pip install jupyterlab \
+    pip3 install jupyterlab \
+    conda install -c conda-forge jupyterlab
+
+
 
 # Expose port 8080
 EXPOSE 8080
